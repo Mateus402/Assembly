@@ -47,6 +47,31 @@ NAME_E, HEX 0
 
 ![image](https://github.com/Mateus402/Assembly/assets/112894988/09e62b8f-d443-44ef-ab33-4d4d0663ab3a)
 
+## Watches do código acima:
+
+![alt text](image-1.png)
+
+## Explicação dos Endereços de Memória e Valores
+
+Este é um resumo dos endereços de memória e valores no programa Assembly fornecido:
+
+- `F 00B 0046`: 'F' está armazenado no endereço de memória 00B com o valor hexadecimal 0046.
+- `l 00C 006C`: 'l' está armazenado no endereço de memória 00C com o valor hexadecimal 006C.
+- `a 00D 0061`: 'a' está armazenado no endereço de memória 00D com o valor hexadecimal 0061.
+- `s 00E 0073`: 's' está armazenado no endereço de memória 00E com o valor hexadecimal 0073.
+- `h 00F 0068`: 'h' está armazenado no endereço de memória 00F com o valor hexadecimal 0068.
+
+A seguir, os endereços de memória e valores para o armazenamento do nome "Flásh":
+
+- `NAME_S 010 0046`: O primeiro caractere 'F' do nome é armazenado no endereço de memória 010 com o valor hexadecimal 0046.
+- `NAME_A 011 006C`: O segundo caractere 'l' do nome é armazenado no endereço de memória 011 com o valor hexadecimal 006C.
+- `NAME_M 012 0061`: O terceiro caractere 'a' do nome é armazenado no endereço de memória 012 com o valor hexadecimal 0061.
+- `NAME_U 013 0073`: O quarto caractere 's' do nome é armazenado no endereço de memória 013 com o valor hexadecimal 0073.
+- `NAME_E 014 0068`: O quinto e último caractere 'h' do nome é armazenado no endereço de memória 014 com o valor hexadecimal 0068.
+
+Esses valores representam a disposição dos caracteres na memória conforme definido no programa Assembly.
+
+
 
 ## Atividade 2
 
