@@ -34,3 +34,56 @@ NAME_E, HEX 0
 ```
 
 ![image](https://github.com/Mateus402/Assembly/assets/112894988/09e62b8f-d443-44ef-ab33-4d4d0663ab3a)
+
+
+## Atividade 2
+
+### DOS em Assembly
+O DOS (Disk Operating System) aplicado em Assembly refere-se à prática de programar para o sistema operacional DOS usando linguagem Assembly. Nesse contexto, os programadores escrevem código Assembly para realizar tarefas específicas, como interagir com o sistema de arquivos, controlar dispositivos de hardware e criar interfaces de usuário simples. A programação Assembly no DOS oferece um controle direto sobre o hardware do computador, permitindo um desempenho otimizado e uma utilização eficiente dos recursos limitados disponíveis nos sistemas DOS.
+
+```assembly
+.MODEL small ;Define o modelo de memória small
+.STACK 64 ;Aloca um espaço de 64 bytes para a pilha
+
+.DATA                          ;Inicio da seção de dados
+
+    message db 'Flash', '$'    ;Define uma mensagem e termina com cifrão
+
+.CODE                              ;Inicio da seção de código
+main proc                          ;Define o inicio do procedimento principal
+
+         mov ax, @data             ;Carrega o endereço do segmento em AX
+         mov ds, ax                ;Move o valor em AX para o registrador DS
+
+         mov ah, 9h                ;Prepara o registrador AH para a função 09h do DOS
+         mov dx, offset message    ;vai fazer o deslocamento da msg em DX
+
+         int 21h                   ;Intrução de Interrupção
+
+main endp                          ;Marca o fim do ponto
+end main ;Indica o fim
+```
+
+## Explicação do código e dos Registradores
+
+1. **AX**:
+   - Registrador geral de 16 bits, frequentemente usado para várias operações.
+   - `mov ax, @data`: Carrega o endereço do segmento de dados na memória em AX.
+
+2. **DS** (Data Segment Register):
+   - Registrador de segmento de dados usado para acessar dados na memória.
+   - `mov ds, ax`: Move o conteúdo de AX para DS, permitindo que o segmento de dados seja acessado corretamente.
+
+3. **AH** e **DX**:
+   - **AH** é o byte superior do registrador AX e **DX** é um registrador de dados de 16 bits.
+   - `mov ah, 9h`: Define o valor 9h (hexadecimal) em AH, indicando que a função de impressão de string será chamada.
+   - `mov dx, offset message`: Carrega o endereço efetivo da mensagem na memória em DX. `offset` é uma diretiva que retorna o deslocamento do operando.
+   
+4. **INT 21h**:
+   - Esta é uma interrupção de software que chama uma função do DOS.
+   - O valor em AH (9h) indica qual função do DOS será executada.
+   - O registrador DX pode conter um endereço para uma string, que é o caso aqui. Ele aponta para a mensagem que será impressa na tela.
+
+   # Saída do Código
+
+   ![alt text](image.png)
