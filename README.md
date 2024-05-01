@@ -3,7 +3,19 @@ Sistemas Embarcados
 
 [Marie.js](https://marie.js.org/)
 
-Como funciona a alocação de memória dinâmica para armazenar o nome
+## Como funciona a alocação de memória dinâmica para armazenar o nome
+
+
+Este programa em Assembly simula a atribuição de valores às posições de memória para armazenar o nome "Flásh".
+
+1. `ORG 000`: Define o endereço de origem do programa como 000.
+2. `Load F`: Carrega o valor hexadecimal 46 (que corresponde à letra 'F') no acumulador.
+3. `Store NAME_S`: Armazena o valor atual do acumulador na posição de memória indicada por `NAME_S`.
+4. Repete os passos 2 e 3 para cada letra do nome "Flásh", armazenando-as em posições de memória diferentes (`NAME_A`, `NAME_M`, `NAME_U`, `NAME_E`).
+5. `Halt`: Encerra a execução do programa.
+
+Assim, ao final da execução, cada posição de memória `NAME_X` conterá o valor hexadecimal correspondente à letra do nome "Flásh". No entanto, esse código não representa a alocação dinâmica de memória. A alocação dinâmica de memória geralmente envolve solicitar memória durante a execução do programa, o que não parece ser o caso aqui. Neste código, as posições de memória já estão definidas estaticamente.
+
 
 ```assembly
 ORG 000 /inicia o programa no endereço 000
